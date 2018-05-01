@@ -18,15 +18,15 @@ User() {
 }
 
 
-
+	//This method welcomes users then uses a while loop to get the users prefered units of measurement.
 	void getUsersPreference() {
 		System.out.println("Hello welcome to the Water Intake app! Please answer the following questions or following directions to enter the following to get started!");
-		
+		//This while loop only allows users to enter either 1 or 2 if the user does not enter either of these values the user will be asked the same question until an accepted value is given.
 		while(usersPreference< 1 || usersPreference> 2) {
 		System.out.println("Please select what system you want your units to be. \n 1. Imperial(US) \n 2. Metric");
 		usersInput = new Scanner(System.in);
 		String usersResponse= usersInput.nextLine();
-		
+		//This section catches any errors that can occur while changing the users response from a String to an integer.
 		try{
 			usersPreference = Integer.parseInt(usersResponse);	
 		}
@@ -35,6 +35,7 @@ User() {
 		}
 		
 	}
+		//This method gets the amount of time the user has exercised during the day.
 		void getUsersExerciseTime() {	
 		if(usersExerciseTime!=0 || usersExerciseTime<300) {
 			System.out.println("Please enter your time spent daily exercising in minutes");
